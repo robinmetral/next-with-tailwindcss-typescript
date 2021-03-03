@@ -1,9 +1,8 @@
-import { User } from "../interfaces";
+import { Book } from "../interfaces";
 
-/** Dummy user data. */
-export const sampleUserData: User[] = [
-  { id: 101, name: "Alice" },
-  { id: 102, name: "Bob" },
-  { id: 103, name: "Caroline" },
-  { id: 104, name: "Dave" },
+export const sampleBooksData: Book[] = [
+  { id: 1, name: "Hear The Wind Sing", author: "Haruki Murakami" },
+  { id: 2, name: "Pinball, 1973", author: "Haruki Murakami" },
+  { id: 3, name: "A Wild Sheep Chase", author: "Haruki Murakami" },
+  { id: 4, name: "The Great Gatsby", author: "F. Scott Fitzgerald" },
 ];

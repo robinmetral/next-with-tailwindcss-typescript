@@ -1,39 +1,33 @@
-import React, { ReactNode } from "react";
-import Link from "next/link";
 import Head from "next/head";
 
-type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+import Link from "./Link";
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div>
+const Layout: React.FC = ({ children }) => (
+  <div className="max-w-2xl mx-auto text-lg">
     <Head>
-      <title>{title}</title>
+      <title>Next.js with Tailwind CSS and TypeScript</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta lang="en" />
     </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{" "}
-        |{" "}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{" "}
-        |{" "}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{" "}
-        | <a href="/api/users">Users API</a>
+    <header className="my-6">
+      <nav className="text-center">
+        <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
+        <Link href="/bookshelf">Bookshelf</Link> |{" "}
+        <Link href="/api/books">Books API</Link>
       </nav>
+      <hr className="mt-6" />
     </header>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
+    <footer className="my-6">
+      <hr className="mb-6" />
+      <p className="text-center text-gray-500">
+        Start your project with Next.js, Tailwind CSS and TypeScript:
+        <br />
+        <Link href="https://github.com/robinmetral/next-with-tailwindcss-typescript">
+          use this template on GitHub
+        </Link>
+      </p>
     </footer>
   </div>
 );

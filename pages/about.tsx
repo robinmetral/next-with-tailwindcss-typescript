@@ -1,16 +1,18 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
+import Link from "../components/Link";
 
-const AboutPage = () => (
-  <Layout title="About | Next.js + TypeScript Example">
+const About: React.FC = () => (
+  <>
     <h1>About</h1>
-    <p>This is the about page</p>
+    <p className="mb-3">
+      This is a boilerplate Next.js website using Tailwind CSS and TypeScript.
+    </p>
     <p>
-      <Link href="/">
-        <a>Go home</a>
+      You can find the source on{" "}
+      <Link href="https://github.com/robinmetral/next-with-tailwindcss-typescript">
+        GitHub
       </Link>
     </p>
-  </Layout>
+  </>
 );
 
-export default AboutPage;
+export default About;

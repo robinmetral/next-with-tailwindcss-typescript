@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript",
+  "name": "next-with-tailwindcss-typescript",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
