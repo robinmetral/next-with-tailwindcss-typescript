@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { sampleBooksData } from "../../../utils/sample-data";
 
-const handler = (_req: NextApiRequest, res: NextApiResponse) => {
+const handler = (_req: NextApiRequest, res: NextApiResponse): void => {
   try {
     if (!Array.isArray(sampleBooksData)) {
       throw new Error("Cannot find books data");
