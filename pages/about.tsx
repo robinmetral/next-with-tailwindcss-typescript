@@ -7,10 +7,11 @@ const About: React.FC = () => (
       This is a boilerplate Next.js website using Tailwind CSS and TypeScript.
     </p>
     <p>
-      You can find the source on{" "}
+      The source is on{" "}
       <Link href="https://github.com/robinmetral/next-with-tailwindcss-typescript">
         GitHub
       </Link>
+      .
     </p>
   </>
 );

@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 
 import { Book } from "../../interfaces";
-import { sampleBooksData } from "../../utils/sample-data";
 import Link from "../../components/Link";
+import { fetchBooks } from "../../utils/books-service";
 
 const Bookshelf: React.FC<{ books: Book[] }> = ({ books }) => (
   <>
@@ -28,7 +28,7 @@ const Bookshelf: React.FC<{ books: Book[] }> = ({ books }) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const books: Book[] = sampleBooksData;
+  const books: Book[] = await fetchBooks();
   return { props: { books } };
 };
 

@@ -11,10 +11,21 @@ const Layout: React.FC = ({ children }) => (
       <meta lang="en" />
     </Head>
     <header className="my-6">
-      <nav className="text-center">
-        <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
-        <Link href="/bookshelf">Bookshelf</Link> |{" "}
-        <Link href="/api/books">Books API</Link>
+      <nav>
+        <ul className="list-none flex justify-center gap-6">
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/bookshelf">Bookshelf</Link>
+          </li>
+          <li>
+            <Link href="/api/books">Books API</Link>
+          </li>
+        </ul>
       </nav>
       <hr className="mt-6" />
     </header>
