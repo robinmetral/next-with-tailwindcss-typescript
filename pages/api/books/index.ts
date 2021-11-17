@@ -4,9 +4,8 @@ import { sampleBooksData } from "../../../utils/sample-data";
 const handler = (_req: NextApiRequest, res: NextApiResponse): void => {
   try {
     if (!Array.isArray(sampleBooksData)) {
-      throw new Error("Cannot find books data");
+      throw new Error("Couldn't find books");
     }
-
     res.status(200).json(sampleBooksData);
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message });

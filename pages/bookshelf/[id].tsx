@@ -2,7 +2,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "../../components/Link";
 
 import { Book } from "../../interfaces";
-import { sampleBooksData } from "../../utils/sample-data";
+import { fetchBooks } from "../../utils/books-service";
 
 const BookDetail: React.FC<{ book: Book }> = ({ book }) => (
   <>
@@ -21,12 +21,13 @@ export default BookDetail;
  * https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = sampleBooksData.map((book) => ({
+  const books = await fetchBooks();
+  const paths = books.map((book) => ({
     params: { id: book.id.toString() },
   }));
   return {
     paths,
-    fallback: false, // show a 404 if that path doesn't exist
+    fallback: false,
   };
 };
 
@@ -35,7 +36,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
  * https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
  */
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const books = await fetchBooks();
   const id = params?.id;
-  const book = sampleBooksData.find((data) => data.id === Number(id));
+  const book = books.find((data) => data.id === Number(id));
   return { props: { book } };
 };
