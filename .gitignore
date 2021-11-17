@@ -2,13 +2,11 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
 
-# next.js
+# Next.js
 /.next/
 /out/
 
@@ -17,7 +15,6 @@
 
 # misc
 .DS_Store
-*.pem
 
 # debug
 npm-debug.log*
@@ -30,5 +27,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# vercel
+# Vercel
 .vercel

@@ -14,7 +14,7 @@ const Bookshelf: React.FC<{ books: Book[] }> = ({ books }) => (
       </Link>
       .
     </p>
-    <p className="mb-3">There are {books.length} books:</p>
+    <p className="mb-3">There are {books.length} books on the bookshelf:</p>
     <ul className="list-inside list-decimal">
       {books.map((book) => (
         <li key={book.id}>
