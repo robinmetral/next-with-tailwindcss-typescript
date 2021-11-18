@@ -31,7 +31,7 @@ export default BookDetail;
 export const getStaticPaths: GetStaticPaths = async () => {
   const books = await fetchBooks();
   const paths = books.map((book) => ({
-    params: { id: book.isbn },
+    params: { isbn: book.isbn },
   }));
   return {
     paths,
@@ -41,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const books = await fetchBooks();
-  const id = params?.id;
-  const book = books.find((data) => data.isbn === id);
+  const isbn = params?.isbn;
+  const book = books.find((data) => data.isbn === isbn);
   return { props: { book } };
 };

@@ -22,7 +22,7 @@ const Bookshelf: React.FC<{ books: Book[] }> = ({ books }) => (
     <ul className="list-inside list-decimal">
       {books.map((book) => (
         <li key={book.isbn}>
-          <Link href="/bookshelf/[id]" as={`/bookshelf/${book.isbn}`}>
+          <Link href="/bookshelf/[isbn]" as={`/bookshelf/${book.isbn}`}>
             {book.title} ({book.authors[0].name}, {book.publish_date})
           </Link>
         </li>
