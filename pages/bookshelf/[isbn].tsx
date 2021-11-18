@@ -9,12 +9,7 @@ const BookDetail: React.FC<{ book: Book }> = ({ book }) => (
   <>
     <h1>{book.title}</h1>
     <div className="flex mb-6 gap-6">
-      <Image
-        src={book.cover.medium}
-        alt={`Book cover of ${book.title}`}
-        width="180"
-        height="277"
-      />
+      <Image src={book.cover.medium} alt="" width="180" height="277" />
       <ul>
         <li>Author: {book.authors[0].name}</li>
         <li>Published: {book.publish_date}</li>
