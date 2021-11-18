@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "./Link";
 
 const Layout: React.FC = ({ children }) => (
-  <div className="max-w-2xl mx-auto text-lg">
+  <div className="max-w-2xl mx-auto text-lg px-3">
     <Head>
       <title>Next.js with Tailwind CSS and TypeScript</title>
       <meta charSet="utf-8" />
