@@ -5,7 +5,6 @@ export const sampleBooks = [
   { isbn: "0452265169", title: "A Wild Sheep Chase" },
   { isbn: "0679446699", title: "The Wind-Up Bird Chronicle" },
   { isbn: "9780375704024", title: "Norwegian Wood" },
-  { isbn: "9781400043668", title: "Kafka on the Shore" },
 ];
 
 export async function fetchBooks(): Promise<Book[]> {
