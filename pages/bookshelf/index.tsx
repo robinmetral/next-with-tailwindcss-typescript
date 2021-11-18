@@ -2,24 +2,28 @@ import { GetStaticProps } from "next";
 
 import { Book } from "../../interfaces";
 import Link from "../../components/Link";
-import { fetchBooks } from "../../utils/books-service";
+import { fetchBooks } from "../../services/books";
 
 const Bookshelf: React.FC<{ books: Book[] }> = ({ books }) => (
   <>
     <h1>Bookshelf</h1>
-    <p className="mb-3">
-      This is an example fetching data with{" "}
+    <p className="mb-3 italic">
+      This example fetches data at build time using{" "}
       <Link href="https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation">
         getStaticProps()
+      </Link>{" "}
+      and{" "}
+      <Link href="https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation">
+        getStaticPaths()
       </Link>
       .
     </p>
     <p className="mb-3">There are {books.length} books on the bookshelf:</p>
     <ul className="list-inside list-decimal">
       {books.map((book) => (
-        <li key={book.id}>
-          <Link href="/bookshelf/[id]" as={`/bookshelf/${book.id}`}>
-            {book.name}
+        <li key={book.isbn}>
+          <Link href="/bookshelf/[id]" as={`/bookshelf/${book.isbn}`}>
+            {book.title} ({book.authors[0].name}, {book.publish_date})
           </Link>
         </li>
       ))}

@@ -17,26 +17,20 @@ const Layout: React.FC = ({ children }) => (
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
             <Link href="/bookshelf">Bookshelf</Link>
-          </li>
-          <li>
-            <Link href="/api/books">Books API</Link>
           </li>
         </ul>
       </nav>
       <hr className="mt-6" />
     </header>
-    {children}
+    <main>{children}</main>
     <footer className="my-6">
       <hr className="mb-6" />
       <p className="text-center text-gray-500">
         Start your project with Next.js, Tailwind CSS and TypeScript:
         <br />
-        <Link href="https://github.com/robinmetral/next-with-tailwindcss-typescript">
-          use this template on GitHub
+        <Link href="https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss-typescript">
+          view this example on GitHub
         </Link>
       </p>
     </footer>
